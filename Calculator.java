@@ -250,6 +250,8 @@ public class Calculator {
         }
         String extra=total.substring(0,total.length());
         extra=formatResult(extra);
+        
+        
         return extra.substring(0,extra.length());
 
     }
@@ -271,3 +273,5 @@ public class Calculator {
 
 
 }
+    
+    
