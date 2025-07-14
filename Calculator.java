@@ -88,13 +88,13 @@ public class Calculator {
         int des=0;
         for(int i=0;i<len;i++){
             if(number.charAt(i)=='.'){
-                number=appendZeros(number,20);
+                number=appendZeros(number,15);
                 
                 des=1;
                 break;
             }
         }
-        number=prependZeros(number,20);
+        number=prependZeros(number,15);
         
         StringBuilder result=new StringBuilder("");
         
@@ -108,7 +108,11 @@ public class Calculator {
         }
         result.append(number.substring(numindex,len));
         if(des==0){
-            return result.substring(0,result.length());
+            result.append('.');
+            result.append('0');
+            String ex="";
+            ex=result.substring(0,result.length());
+            return ex.substring(0,result.length());
         }
         for(int i=0;result.charAt(i)!='.';i++){
             indexdot++;
@@ -264,4 +268,6 @@ public class Calculator {
         return jar.substring(0,jar.length());
 
     }
+
+
 }
