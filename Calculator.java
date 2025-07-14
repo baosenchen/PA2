@@ -25,28 +25,48 @@ public class Calculator {
 
 
 
-    public static String extractDecimal(String number){
-        int len=number.length();
-        int dotindex=0;
-        String result="";
-        for(int i=0;i<len && number.charAt(i)!='.';i++){
-                dotindex=i+1;
-        }
-        for(int i=dotindex;i<len;i++){
-            result=number.substring(dotindex+1,i+1);
-            };
-  
-            int lenr=result.length();
-        for(int j=0;j<lenr;j++){
-            if(result.charAt(j)!='0'){
-                return result.substring(0,result.length());}
-                if(lenr==1 && result.charAt(0)=='0')
-                return "";
-            if(j==lenr-2 && result.charAt(lenr-1)=='0'){
-                return "";}
-        } 
-        return result.substring(0,result.length());
+public static String extractDecimal(String number) {
+    int dotIndex = number.indexOf('.');
+    if (dotIndex == -1 || dotIndex == number.length() - 1) {
+        return "";
     }
+    String result = number.substring(dotIndex + 1);
+    for (int i = 0; i < result.length(); i++) {
+        if (result.charAt(i) != '0') {
+            return result;
+        }
+    }
+    return "0";
+}
+
+//public static String extractDecimal(String number){
+  //      int len=number.length();
+    //    int dotindex=0;
+      //  String result="";
+        //for(int i=0;i<len && number.charAt(i)!='.';i++){
+          //      dotindex=i+1;//dotindex=i+1
+        //}
+        
+       // for(int i=dotindex;i<len;i++){
+            
+         //   result=number.substring(dotindex+1,i+1);
+           // };
+            
+            //int lenr=result.length();
+        //for(int j=0;j<lenr;j++){
+          //  if(result.charAt(j)!='0'){
+            //    return result.substring(0,result.length());}
+              //  if(lenr==1 && result.charAt(0)=='0')
+                //return "0";
+           // if(j==lenr-2 && result.charAt(lenr-1)=='0'){
+            //    return "";}
+        //} 
+        //return result.substring(0,result.length());
+  // }
+
+
+
+    
 
 
 
@@ -270,7 +290,6 @@ public class Calculator {
         return jar.substring(0,jar.length());
 
     }
-
 
 }
     
